@@ -1,3 +1,5 @@
+import readline from 'readline';
+
 export function getNextTerm(curTerm) {
   let nextTerm = '';
 
@@ -19,3 +21,28 @@ export function getNextTerm(curTerm) {
 
   return nextTerm;
 }
+
+// n이 주어질 때, n번째 항의 자릿수 중 가운데 두 자리수 출력(첫 번째 항은 1, 3 < n < 100)
+export function solution(n) {
+  let a = '1';
+
+  // n번째 항 구하기
+  for (let i = 0; i < n - 1; i++) {
+    a = getNextTerm(a);
+  }
+
+  const mid = a.length / 2;
+  console.log(a.slice(mid - 1, mid + 1));
+}
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question('양의 정수 n을 입력하세요:', (line) => {
+  const n = Number(line);
+  solution(n);
+
+  rl.close();
+});
