@@ -1,4 +1,4 @@
-import { getNextTerm } from './solution';
+import { getNextTerm, solution } from './solution';
 
 describe('look and say sequence test', () => {
   describe('첫 번째 항이 1일 때', () => {
@@ -36,5 +36,21 @@ describe('look and say sequence test', () => {
         );
       });
     }
+  });
+});
+
+describe('n번째 항의 자릿수 중 가운데 두 자리 수를 출력하는 함수 테스트(3 < n < 100, 첫 번째 항 = 1)', () => {
+  test('5번 째 항의 가운데 두 자리 수는 12이다.', () => {
+    const logSpy = jest.spyOn(console, 'log');
+    solution(5);
+
+    expect(logSpy).toHaveBeenCalledWith('12');
+  });
+
+  test('8번째 항의 가운데 두 자리 수는 21이다.', () => {
+    const logSpy = jest.spyOn(console, 'log');
+    solution(8);
+
+    expect(logSpy).toHaveBeenCalledWith('21');
   });
 });
