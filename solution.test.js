@@ -8,7 +8,7 @@ describe('look and say sequence test', () => {
       test(`이전 항이 ${expected[i - 1]}일 때, 현재 항은 ${
         expected[i]
       }이다.`, () => {
-        expect(getNextTerm(expected[i - 1])).toBe(expected[i]);
+        expect(getNextTerm(String(expected[i - 1]))).toBe(String(expected[i]));
       });
     }
   });
@@ -31,9 +31,7 @@ describe('look and say sequence test', () => {
       test(`이전 항이 ${prefix[i - 1]}a일 때, 현재 항은 ${
         prefix[i]
       }a이다.`, () => {
-        expect(getNextTerm(Number(prefix[i - 1] + a))).toBe(
-          Number(prefix[i] + a),
-        );
+        expect(getNextTerm(prefix[i - 1] + a)).toBe(prefix[i] + a);
       });
     }
   });

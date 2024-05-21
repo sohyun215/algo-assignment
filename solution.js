@@ -1,5 +1,4 @@
-export function getNextTerm(number) {
-  const curTerm = String(number);
+export function getNextTerm(curTerm) {
   let nextTerm = '';
 
   let repeatedNum = curTerm[0];
@@ -18,7 +17,5 @@ export function getNextTerm(number) {
 
   nextTerm += cnt + repeatedNum; // 마지막 숫자에 대한 처리
 
-  return Number(nextTerm);
+  return nextTerm;
 }
-
-console.log(getNextTerm(1));
